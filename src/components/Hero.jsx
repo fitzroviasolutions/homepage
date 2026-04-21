@@ -4,25 +4,29 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 function WestminsterSign({ street, district, rotate = 0, delay = 0 }) {
   return (
     <motion.div
-      style={{ rotate }}
-      className="inline-block"
+      style={{ rotate, fontFamily: "'Barlow Condensed', sans-serif" }}
+      className="inline-block shadow-[2px_3px_12px_rgba(0,0,0,0.18)]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="bg-[#003F8A] p-[6px] shadow-lg" style={{ minWidth: 200 }}>
-        <div className="border border-white/50 px-4 py-3 text-center">
-          <p className="text-white font-sans font-bold text-sm tracking-[0.12em] uppercase leading-tight">
+      <div className="bg-white border border-black/15" style={{ minWidth: 300 }}>
+        {/* Top row: street name left, district right */}
+        <div className="flex items-center justify-between px-4 pt-3 pb-2.5 gap-6">
+          <span className="font-black text-black text-2xl uppercase leading-none tracking-wide">
             {street}
-          </p>
-          <p className="text-white font-sans font-bold text-base tracking-[0.1em] mt-0.5">
+          </span>
+          <span className="font-black text-2xl uppercase leading-none tracking-wide whitespace-nowrap" style={{ color: '#860B04' }}>
             {district}
-          </p>
-          <div className="border-t border-white/30 mt-2 pt-1.5">
-            <p className="text-white/70 font-sans font-bold text-[8px] tracking-[0.2em] uppercase">
-              City of Westminster
-            </p>
-          </div>
+          </span>
+        </div>
+        {/* Dividing line */}
+        <div className="h-[2px] bg-black" />
+        {/* Bottom row: City of Westminster */}
+        <div className="px-4 py-1.5 text-center">
+          <span className="font-bold text-xs uppercase tracking-[0.18em]" style={{ color: '#860B04' }}>
+            City of Westminster
+          </span>
         </div>
       </div>
     </motion.div>
