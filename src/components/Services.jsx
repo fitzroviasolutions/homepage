@@ -3,22 +3,22 @@ import { motion, useInView } from 'framer-motion'
 
 const pillars = [
   {
-    label: 'Look the part',
-    title: 'Web design and brand development that make the right first impression.',
+    label: 'Design and brand',
+    title: 'We can design the site, shape the brand, or help tidy both up.',
     body:
-      'We shape how the business looks online, so the website and the brand feel considered, clear, and recognisably yours.',
+      'If things feel a bit all over the place, we help bring it together so it looks clear and feels more like your business.',
   },
   {
-    label: 'Run properly',
-    title: 'Web development and website management that keep things moving.',
+    label: 'Build and manage',
+    title: 'We build websites and keep them looked after.',
     body:
-      'We build fast, flexible sites, then help keep them updated, current, and working properly once they are live.',
+      'That might mean starting from scratch, improving what you already have, or keeping things updated once the site is live.',
   },
   {
-    label: 'Think clearly',
-    title: 'Business consultancy for the decisions behind the scenes.',
+    label: 'Talk it through',
+    title: 'And if you need help figuring things out, we do that too.',
     body:
-      'When the challenge is bigger than the site itself, we help sharpen the offer, the messaging, and the direction.',
+      'Sometimes it is not really a website problem at all. We can help with the offer, the messaging, and the decisions around it.',
   },
 ]
 
@@ -35,84 +35,68 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: '-12%' })
 
   return (
-    <section id="services" ref={ref} className="relative border-y border-black/8 bg-[#f3f1ea]">
-      <div className="absolute inset-x-0 top-0 h-px bg-black/5" />
+    <section id="services" ref={ref} className="border-y border-black/8 bg-[#f3f1ea]">
+      <div className="max-w-6xl mx-auto px-8 py-20 md:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl"
+        >
+          <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-black/45">
+            Our services
+          </p>
+          <h2 className="mt-4 font-serif font-bold text-[clamp(2.2rem,4.5vw,3.9rem)] leading-[1.08] tracking-tight text-black">
+            We can help with the website, the brand, and the bits around it.
+          </h2>
+          <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-black/58">
+            Some people come to us for a new site. Some need help keeping things updated. Some just want a second
+            brain on the brand. We are happy doing all of it.
+          </p>
+        </motion.div>
 
-      <div className="max-w-7xl mx-auto px-8 py-24 md:py-32">
-        <div className="grid gap-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)] lg:gap-20">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:sticky lg:top-28 lg:self-start"
-          >
-            <div className="inline-flex items-center gap-3 mb-6">
-              <span className="h-2 w-2 rounded-full bg-[#d4ff3f]" />
-              <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-black/45">
-                Our services
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-14 grid gap-8 border-t border-black/10 pt-10 md:grid-cols-3"
+        >
+          {pillars.map((pillar) => (
+            <article key={pillar.title} className="space-y-3">
+              <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-black/35">
+                {pillar.label}
               </p>
-            </div>
+              <h3 className="font-serif text-2xl leading-tight tracking-tight text-black">
+                {pillar.title}
+              </h3>
+              <p className="font-sans text-base leading-relaxed text-black/56">
+                {pillar.body}
+              </p>
+            </article>
+          ))}
+        </motion.div>
 
-            <h2 className="font-serif font-black text-[clamp(2.6rem,5vw,4.7rem)] leading-[1.04] tracking-tight text-black">
-              The creative work, the technical work, and the grown-up business thinking in between.
-            </h2>
-
-            <p className="mt-8 max-w-xl font-sans text-lg leading-relaxed text-black/58">
-              From brand and design through to development, management, and consultancy, we help businesses look
-              sharper and work smarter online.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-3">
-              {listItems.map((item) => (
-                <span
-                  key={item}
-                  className="border border-black/10 px-4 py-2 font-sans text-[10px] font-bold tracking-[0.14em] uppercase text-black/55"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          <div className="space-y-6">
-            {pillars.map((pillar, index) => (
-              <motion.article
-                key={pillar.title}
-                initial={{ opacity: 0, y: 28 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group border border-black/10 bg-[#f9f7f1] p-8 md:p-10 transition-colors duration-300 hover:bg-[#fdfcf8]"
-              >
-                <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-black/35">
-                  {pillar.label}
-                </p>
-                <h3 className="mt-4 max-w-2xl font-serif text-3xl leading-tight tracking-tight text-black md:text-[2.35rem]">
-                  {pillar.title}
-                </h3>
-                <p className="mt-5 max-w-xl font-sans text-base leading-relaxed text-black/56 md:text-[1.05rem]">
-                  {pillar.body}
-                </p>
-              </motion.article>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 flex flex-col gap-6 border-t border-black/10 pt-8 md:flex-row md:items-center md:justify-between"
+        >
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {listItems.map((item) => (
+              <span key={item} className="font-sans text-[11px] text-black/48">
+                {item}
+              </span>
             ))}
-
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col gap-5 border-t border-black/10 pt-8 md:flex-row md:items-start md:justify-between"
-            >
-              <p className="max-w-xl font-sans text-base leading-relaxed text-black/52">
-                One team to handle the look, the build, and the thinking behind it.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center self-start border border-black bg-black px-6 py-3 font-sans text-[11px] font-bold tracking-[0.15em] uppercase text-white transition-colors hover:bg-[#d4ff3f] hover:text-black"
-              >
-                Start a project
-              </a>
-            </motion.div>
           </div>
-        </div>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center self-start border border-black bg-black px-6 py-3 font-sans text-[11px] font-bold tracking-[0.15em] uppercase text-white transition-colors hover:bg-[#d4ff3f] hover:text-black"
+          >
+            Start a project
+          </a>
+        </motion.div>
       </div>
     </section>
   )
