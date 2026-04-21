@@ -5,16 +5,7 @@ import { ArrowRight } from 'lucide-react'
 export default function Contact() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-10%' })
-  const [sent, setSent] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    const subject = encodeURIComponent(`New enquiry from ${form.name}`)
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
-    window.location.href = `mailto:hello@w1w.agency?subject=${subject}&body=${body}`
-    setSent(true)
-  }
 
   return (
     <section id="contact" ref={ref} className="bg-black py-24 relative overflow-hidden">
@@ -32,7 +23,7 @@ export default function Contact() {
             Ready for a real<br />conversation?
           </h2>
           <p className="font-sans text-zinc-400 text-lg max-w-lg leading-relaxed">
-            Tell us about your business and what you need. Fill in the form and we'll get back to you the same day.
+            Tell us about your business and what you need. Fill in the form and we&apos;ll get back to you the same day.
           </p>
         </motion.div>
 
@@ -42,57 +33,58 @@ export default function Contact() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            {sent ? (
-              <div className="py-16">
-                <p className="font-serif font-bold text-white text-2xl mb-3">We'll be in touch today.</p>
-                <p className="font-sans text-zinc-400 text-sm">Check your email client — we'll reply within the day.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-500 mb-2">Name</label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white font-sans text-sm placeholder-zinc-600 focus:outline-none focus:border-[#d4ff3f]/50 transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-500 mb-2">Email</label>
-                    <input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white font-sans text-sm placeholder-zinc-600 focus:outline-none focus:border-[#d4ff3f]/50 transition-colors"
-                      placeholder="you@company.com"
-                    />
-                  </div>
-                </div>
+            <form
+              action="https://formspree.io/f/meevrjap"
+              method="POST"
+              className="space-y-5"
+            >
+              <input type="hidden" name="_subject" value={`New enquiry from ${form.name || 'Website contact form'}`} />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-500 mb-2">What do you need?</label>
-                  <textarea
+                  <label className="block font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-500 mb-2">Name</label>
+                  <input
+                    name="name"
+                    type="text"
                     required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white font-sans text-sm placeholder-zinc-600 focus:outline-none focus:border-[#d4ff3f]/50 transition-colors resize-none"
-                    placeholder="Tell us what you're working on..."
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white font-sans text-sm placeholder-zinc-600 focus:outline-none focus:border-[#d4ff3f]/50 transition-colors"
+                    placeholder="Your name"
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="group inline-flex items-center gap-3 bg-[#d4ff3f] text-black font-sans font-bold text-[11px] tracking-[0.15em] uppercase px-10 py-5 hover:bg-white transition-colors"
-                >
-                  Send message
-                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                </button>
-              </form>
-            )}
+                <div>
+                  <label className="block font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-500 mb-2">Email</label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white font-sans text-sm placeholder-zinc-600 focus:outline-none focus:border-[#d4ff3f]/50 transition-colors"
+                    placeholder="you@company.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block font-sans text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-500 mb-2">What do you need?</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 text-white font-sans text-sm placeholder-zinc-600 focus:outline-none focus:border-[#d4ff3f]/50 transition-colors resize-none"
+                  placeholder="Tell us what you&apos;re working on..."
+                />
+              </div>
+              <button
+                type="submit"
+                className="group inline-flex items-center gap-3 bg-[#d4ff3f] text-black font-sans font-bold text-[11px] tracking-[0.15em] uppercase px-10 py-5 transition-colors hover:bg-white"
+              >
+                Send message
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+              </button>
+            </form>
           </motion.div>
 
           <motion.div
