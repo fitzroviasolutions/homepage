@@ -1,15 +1,26 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: 'Noto Serif', serif;
+  --font-sans: 'Manrope', sans-serif;
+  --font-handwritten: 'La Belle Aurore', cursive;
+  --color-accent: #d4ff3f;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #080808;
-  color: #f0f0f0;
-  font-family: 'Inter', system-ui, sans-serif;
+  background: #f9f9f7;
+  color: #111111;
+  font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif', serif;
 }
 
 #root {
@@ -18,5 +29,5 @@ body {
 
 ::selection {
   background: #d4ff3f;
-  color: #080808;
+  color: #111111;
 }

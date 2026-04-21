@@ -1,49 +1,26 @@
-import { motion } from 'framer-motion'
-
-const links = {
-  Services: ['Web Design', 'Automation', 'Social Media', 'Branding', 'SEO'],
-  Company: ['About', 'Work', 'Process', 'Contact'],
-}
-
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 px-6 py-16 max-w-7xl mx-auto w-full">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
+    <footer className="bg-black border-t border-white/8 px-8 py-14">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-10">
         <div>
-          <div className="text-2xl font-semibold text-white mb-3">
-            <span className="text-[#d4ff3f]">W</span>1W
-          </div>
-          <p className="text-white/45 text-sm leading-relaxed max-w-xs">
-            A boutique digital agency in Fitzrovia, London. We build websites, automations, and social strategies.
+          <div className="font-serif font-black text-xl text-white mb-4">W1W</div>
+          <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-zinc-500 max-w-xs leading-relaxed">
+            Rooted in Fitzrovia. Websites, automations and social media for London businesses.
           </p>
         </div>
 
-        {Object.entries(links).map(([group, items]) => (
-          <div key={group}>
-            <p className="text-xs text-white/20 uppercase tracking-widest mb-5">{group}</p>
-            <ul className="space-y-3">
-              {items.map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="text-sm text-white/55 hover:text-white transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <div className="flex flex-col gap-6 items-start md:items-end">
+          <div className="flex gap-8">
+            {['Instagram', 'LinkedIn', 'Privacy'].map((l) => (
+              <a key={l} href="#" className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-zinc-500 hover:text-white transition-colors">
+                {l}
+              </a>
+            ))}
           </div>
-        ))}
-      </div>
-
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-white/5">
-        <p className="text-xs text-white/35">
-          © {new Date().getFullYear()} W1W Agency Ltd · Fitzrovia, London
-        </p>
-        <p className="text-xs text-white/35">
-          Company No. 12345678 · Registered in England & Wales
-        </p>
+          <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-[#d4ff3f]">
+            © {new Date().getFullYear()} W1W Agency Ltd · Built in Fitzrovia
+          </p>
+        </div>
       </div>
     </footer>
   )
