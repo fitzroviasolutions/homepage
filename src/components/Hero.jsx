@@ -82,9 +82,9 @@ export default function Hero() {
 
         {/* Right — street signs */}
         <div className="hidden lg:flex flex-col items-center gap-6">
-          <WestminsterSign street="Great Titchfield Street" district="W1W" rotate={-2} delay={0.5} />
-          <WestminsterSign street="Fitzrovia" district="W1T" rotate={1.5} delay={0.65} />
-          <WestminsterSign street="Charlotte Street" district="W1T" rotate={-1} delay={0.8} />
+          <WestminsterSign street="Great Titchfield Street" district="W1" rotate={-2} delay={0.5} />
+          <WestminsterSign street="Fitzrovia" district="W1" rotate={1.5} delay={0.65} />
+          <WestminsterSign street="Charlotte Street" district="W1" rotate={-1} delay={0.8} />
         </div>
       </motion.div>
 
