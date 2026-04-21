@@ -4,21 +4,21 @@ import { motion, useInView } from 'framer-motion'
 const pillars = [
   {
     label: 'Look the part',
-    title: 'Web design and brand development that give people something to remember.',
+    title: 'Web design and brand development that make the right first impression.',
     body:
-      "We shape the visual side of the business so it feels considered from the first second. That can mean a sharper website, a clearer brand, or a full rethink of how everything presents itself online.",
+      'We shape how the business looks online, so the website and the brand feel considered, clear, and recognisably yours.',
   },
   {
     label: 'Run properly',
-    title: 'Web development and website management that keep the whole thing steady.',
+    title: 'Web development and website management that keep things moving.',
     body:
-      "We build sites that are fast, flexible, and easy to live with. Then, if you want us to, we stay involved so updates get done, pages stay current, and your website doesn't quietly turn into another job on your list.",
+      'We build fast, flexible sites, then help keep them updated, current, and working properly once they are live.',
   },
   {
     label: 'Think clearly',
-    title: 'Business consultancy for the bits that sit behind the screen.',
+    title: 'Business consultancy for the decisions behind the scenes.',
     body:
-      "Sometimes the real problem is not the homepage, it's the offer, the messaging, or the direction. We help you make practical decisions so the brand, the website, and the business all pull in the same direction.",
+      'When the challenge is bigger than the site itself, we help sharpen the offer, the messaging, and the direction.',
   },
 ]
 
@@ -58,9 +58,8 @@ export default function Services() {
             </h2>
 
             <p className="mt-8 max-w-xl font-sans text-lg leading-relaxed text-black/58">
-              Some clients need a new website. Some need the existing one managed properly. Some need help making the
-              whole brand feel more coherent. We do all of that, and we do it in a way that feels joined up rather than
-              stitched together.
+              From brand and design through to development, management, and consultancy, we help businesses look
+              sharper and work smarter online.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
@@ -103,8 +102,7 @@ export default function Services() {
               className="flex flex-col gap-5 border-t border-black/10 pt-8 md:flex-row md:items-start md:justify-between"
             >
               <p className="max-w-xl font-sans text-base leading-relaxed text-black/52">
-                In practice, that means one team can take care of the look, the build, the upkeep, and the business
-                logic behind it.
+                One team to handle the look, the build, and the thinking behind it.
               </p>
               <a
                 href="#contact"
