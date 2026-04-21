@@ -1,37 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-function WestminsterSign({ street, district, rotate = 0, delay = 0 }) {
-  return (
-    <motion.div
-      style={{ rotate, fontFamily: "'Barlow Condensed', sans-serif" }}
-      className="inline-block shadow-[2px_3px_12px_rgba(0,0,0,0.18)]"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <div className="bg-white border border-black/15" style={{ minWidth: 300 }}>
-        {/* Top row: street name left, district right */}
-        <div className="flex items-center justify-between px-4 pt-3 pb-2.5 gap-6">
-          <span className="font-black text-black text-2xl uppercase leading-none tracking-wide">
-            {street}
-          </span>
-          <span className="font-black text-2xl uppercase leading-none tracking-wide whitespace-nowrap" style={{ color: '#860B04' }}>
-            {district}
-          </span>
-        </div>
-        {/* Dividing line */}
-        <div className="h-[2px] bg-black" />
-        {/* Bottom row: City of Westminster */}
-        <div className="px-4 py-1.5 text-center">
-          <span className="font-bold text-xs uppercase tracking-[0.18em]" style={{ color: '#860B04' }}>
-            City of Westminster
-          </span>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
 
 export default function Hero() {
   const ref = useRef(null)
@@ -52,10 +21,9 @@ export default function Hero() {
     <section ref={ref} className="relative min-h-screen pt-16 flex flex-col justify-center overflow-hidden">
       <motion.div
         style={{ y, opacity }}
-        className="max-w-7xl mx-auto w-full px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        className="max-w-7xl mx-auto w-full px-8 py-24"
       >
-        {/* Left — text */}
-        <motion.div variants={container} initial="hidden" animate="show">
+        <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
           <motion.h1
             variants={item}
             className="font-serif font-black text-[clamp(2.8rem,6vw,5.5rem)] leading-[1.15] tracking-tight text-black mb-8"
@@ -79,13 +47,6 @@ export default function Hero() {
             </a>
           </motion.div>
         </motion.div>
-
-        {/* Right — street signs */}
-        <div className="hidden lg:flex flex-col items-center gap-6">
-          <WestminsterSign street="Great Titchfield Street" district="W1" rotate={-2} delay={0.5} />
-          <WestminsterSign street="Fitzrovia" district="W1" rotate={1.5} delay={0.65} />
-          <WestminsterSign street="Charlotte Street" district="W1" rotate={-1} delay={0.8} />
-        </div>
       </motion.div>
 
       <div className="border-t border-black/8" />
