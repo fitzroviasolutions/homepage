@@ -62,9 +62,9 @@ export default function Services() {
               transition={{ duration: 0.7, delay: 0.08 + index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="grid gap-5 border-b border-black/10 py-8 last:border-b-0 md:grid-cols-[140px_minmax(0,1fr)] md:gap-8"
             >
-              <div className="flex items-center gap-3 md:flex-col md:items-start md:gap-4">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-black">
-                  <group.icon size={16} strokeWidth={2} />
+              <div className="flex items-center gap-3 md:flex-col md:items-start md:gap-3">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-sm bg-black text-[#d4ff3f] shadow-sm">
+                  <group.icon size={15} strokeWidth={1.9} />
                 </span>
                 <p className="font-sans text-[10px] font-bold tracking-[0.18em] uppercase text-black/38">
                   {group.eyebrow}

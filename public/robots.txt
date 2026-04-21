@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://w1w.agency/sitemap.xml
