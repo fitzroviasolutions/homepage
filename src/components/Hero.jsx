@@ -6,11 +6,11 @@ import Button from './ui/Button'
 export default function Hero() {
   return (
     <Section id="hero" theme="light">
-      <div className="max-w-4xl">
+      <div className="max-w-[896px]">
         <Heading level={1} variant="display" className="text-primary mb-md">
           Pragmatic solutions for human problems.
         </Heading>
-        <Text variant="body-lg" className="text-on-surface-variant mb-xl max-w-2xl">
+        <Text variant="body-lg" className="text-on-surface-variant mb-xl max-w-[672px]">
           We are a collective of engineers, sales experts, and brand strategists helping local businesses grow through simple, effective software and marketing.
         </Text>
         <div className="flex flex-col sm:flex-row gap-sm">

@@ -7,27 +7,27 @@ import Icon from './ui/Icon'
 const services = [
   {
     icon: 'code',
-    title: 'Software Engineering',
-    desc: 'Robust, scalable, and maintainable code tailored to solve your specific operational challenges.',
-    tags: ['Architecture', 'APIs'],
+    title: 'Software & App Solutions',
+    desc: 'We build custom software, tools, and application solutions designed to solve real operational problems and drive business growth.',
+    tags: ['Custom Apps', 'Integrations'],
   },
   {
     icon: 'web',
-    title: 'Website Development',
-    desc: 'High-performance, accessible, and conversion-optimized web experiences that represent your brand.',
-    tags: ['Frontend', 'CMS'],
+    title: 'Digital Platforms',
+    desc: 'High-performance websites and online systems that simplify administration, automate leads, and showcase your brand.',
+    tags: ['Web Platforms', 'E-Commerce'],
   },
   {
     icon: 'campaign',
     title: 'Brand Strategy',
-    desc: 'Positioning your business clearly in the market with cohesive messaging and visual identity.',
+    desc: 'Cohesive brand identity and market positioning that makes your business stand out from the noise and speaks to your users.',
     tags: ['Identity', 'Positioning'],
   },
   {
     icon: 'trending_up',
-    title: 'Sales & Marketing',
-    desc: 'Data-driven strategies to acquire, convert, and retain customers through pragmatic channels.',
-    tags: ['Growth', 'Conversion'],
+    title: 'Sales & Growth',
+    desc: 'Data-driven marketing and conversion-rate optimization strategies focused on acquiring and retaining customers.',
+    tags: ['Marketing', 'Conversion'],
   },
 ]
 

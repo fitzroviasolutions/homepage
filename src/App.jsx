@@ -2,7 +2,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Way from './components/Way'
 import Services from './components/Services'
-import About from './components/About'
+import Work from './components/Work'
 import People from './components/People'
 import Footer from './components/Footer'
 
@@ -13,7 +13,7 @@ export default function App() {
       <Hero />
       <Way />
       <Services />
-      <About />
+      <Work />
       <People />
       <Footer />
     </div>
