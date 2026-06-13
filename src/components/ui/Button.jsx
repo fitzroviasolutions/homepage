@@ -19,18 +19,18 @@ export default function Button({
     c.includes(':inline')
   )
 
-  const baseStyles = `${hasDisplay ? '' : 'inline-flex'} items-center justify-center font-label-md text-label-md rounded font-medium transition-all`
+  const baseStyles = `${hasDisplay ? '' : 'inline-flex'} items-center justify-center font-label-md text-label-md rounded-full font-semibold transition-all duration-300 ease-out active:scale-[0.98]`
 
   const variantStyles = {
-    primary: 'bg-primary text-on-primary hover:opacity-90',
-    outline: 'bg-transparent border border-secondary text-secondary hover:bg-secondary-fixed hover:text-on-secondary-fixed',
-    text: 'text-primary dark:text-inverse-primary hover:text-secondary dark:hover:text-secondary-fixed-dim',
+    primary: 'bg-on-background text-background hover:bg-secondary hover:text-on-secondary hover:shadow-[0_8px_24px_rgba(169,53,48,0.2)] hover:-translate-y-[1px]',
+    outline: 'bg-transparent border border-outline text-on-background hover:border-secondary hover:text-secondary hover:bg-secondary-fixed/10 hover:-translate-y-[1px]',
+    text: 'text-on-surface-variant hover:text-secondary relative py-1 px-2 hover:-translate-y-[1px]',
   }
 
   const sizeStyles = {
-    sm: 'px-[16px] py-[8px]',
-    md: 'px-md py-sm',
-    lg: 'px-lg py-sm',
+    sm: 'px-4 py-2 text-xs',
+    md: 'px-6 py-3',
+    lg: 'px-8 py-4',
   }
 
   return (
@@ -42,3 +42,4 @@ export default function Button({
     </Tag>
   )
 }
+
